@@ -1,0 +1,724 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getUser",
+				"getUserList"
+			],
+			[
+				"show",
+				"showNewProject"
+			],
+			[
+				"User",
+				"UserViewSet"
+			],
+			[
+				"U",
+				"UserSerializer"
+			],
+			[
+				"Work",
+				"WorkProcess"
+			],
+			[
+				"WORK",
+				"WORK_STATUS"
+			],
+			[
+				"Wo",
+				"WorkType"
+			],
+			[
+				"OP",
+				"OPERATION_MODE"
+			],
+			[
+				"ver",
+				"verbose_name"
+			],
+			[
+				"pri",
+				"primary_key"
+			],
+			[
+				"max",
+				"max_length"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "view/workflow/project.vue",
+			"settings":
+			{
+				"buffer_size": 4939,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "api/project.js",
+			"settings":
+			{
+				"buffer_size": 507,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "view/workflow/new-project.vue",
+			"settings":
+			{
+				"buffer_size": 4303,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 78 files for \"console\"\n\nC:\\workspace\\projects\\iview-admin-template\\src\\router\\index.js:\n   27    } else {\n   28      const token = getToken()\n   29:     // console.log('token: ', token)\n   30      if (!token && to.name !== LOGIN_PAGE_NAME) {\n   31        // 未登录且要跳转的页面不是登录页\n   ..\n   47        // else next({ replace: true, name: 'error_401' }) // 无权限，重定向到401页面\n   48        // })\n   49:       console.log(store.state.user)\n   50        if (canTurnTo(to.name, store.state.user.access, routes)) next() // 有权限，可访问\n   51        else next({ replace: true, name: 'error_401' }) // 无权限，重定向到401页面\n\nC:\\workspace\\projects\\iview-admin-template\\src\\view\\main\\main.vue:\n   66      },\n   67      userAvator () {\n   68:       // console.log('avator ', this.$store.state.user)\n   69        return this.$store.state.user.avatorImgPath\n   70      },\n   71      userName () {\n   72:       // console.log('name ', this.$store.state.user)\n   73        return this.$store.state.user.userName\n   74      },\n\nC:\\workspace\\projects\\iview-admin-template\\src\\view\\workflow\\new-project.vue:\n  113                      })\n  114                      flag = false\n  115:                     console.log(this.alert)\n  116                  }\n  117                  return flag\n\n5 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 1280,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "router/index.js",
+			"settings":
+			{
+				"buffer_size": 1777,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "router/routers.js",
+			"settings":
+			{
+				"buffer_size": 3674,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/workspace/projects/django1_11/src/project/models.py",
+			"settings":
+			{
+				"buffer_size": 8044,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/workspace/projects/django1_11/src/user/views.py",
+			"settings":
+			{
+				"buffer_size": 1546,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/workspace/projects/django1_11/src/user/urls.py",
+			"settings":
+			{
+				"buffer_size": 208,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "view/workflow/project-detail.vue",
+			"settings":
+			{
+				"buffer_size": 8297,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: en",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control:insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:list p",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 423.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/workspace/projects/django1_11/src",
+		"/C/workspace/projects/django1_11/src/ntjhch",
+		"/C/workspace/projects/django1_11/src/project",
+		"/C/workspace/projects/django1_11/src/user",
+		"/C/workspace/projects/iview-admin-template/src",
+		"/C/workspace/projects/iview-admin-template/src/api",
+		"/C/workspace/projects/iview-admin-template/src/router",
+		"/C/workspace/projects/iview-admin-template/src/view",
+		"/C/workspace/projects/iview-admin-template/src/view/login",
+		"/C/workspace/projects/iview-admin-template/src/view/main",
+		"/C/workspace/projects/iview-admin-template/src/view/main/components",
+		"/C/workspace/projects/iview-admin-template/src/view/main/components/side-menu",
+		"/C/workspace/projects/iview-admin-template/src/view/workflow"
+	],
+	"file_history":
+	[
+		"/C/workspace/projects/iview-admin-template/src/api/user.js",
+		"/C/workspace/projects/iview-admin-template/src/view/main/main.vue",
+		"/C/workspace/projects/blog/src/static/img/bg.jpg",
+		"/C/workspace/projects/blog/src/static/css/style.css",
+		"/C/workspace/projects/blog/src/templates/layout.html",
+		"/C/workspace/projects/blog/src/templates/includes/_navbar.html",
+		"/C/workspace/projects/blog/src/templates/home.html",
+		"/C/workspace/projects/blog/src/app.py",
+		"/C/workspace/projects/blog/src/templates/eyetool.html",
+		"/C/workspace/projects/blog/src/templates/home.index",
+		"/C/workspace/projects/django1_11/src/project/serializers",
+		"/C/Users/chenfei/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/workspace/projects/django1_11/src/ntjhch/settings/__init__.py",
+		"/C/Users/chenfei/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+			"C:\\workspace\\projects\\iview-admin-template\\src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"console",
+			"side-menu",
+			"side-menuu",
+			"sideMenu"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "view/workflow/project.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4939,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2930,
+								2930
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1827.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "api/project.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "view/workflow/new-project.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4217,
+								4217
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2948.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1280,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										166,
+										173
+									],
+									[
+										403,
+										410
+									],
+									[
+										724,
+										731
+									],
+									[
+										883,
+										890
+									],
+									[
+										1170,
+										1177
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\workspace\\projects\\iview-admin-template\\src\\view\\workflow",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "router/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1405,
+								1405
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 954.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "router/routers.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								351,
+								351
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1305.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/workspace/projects/django1_11/src/project/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1286,
+								1286
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 783.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/workspace/projects/django1_11/src/user/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1546,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1198,
+								1198
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1045.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/workspace/projects/django1_11/src/user/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								208,
+								208
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "view/workflow/project-detail.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7108,
+								7108
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5133.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 50.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 338.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "ntjhch_web.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 257.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
