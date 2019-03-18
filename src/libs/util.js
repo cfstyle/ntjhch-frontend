@@ -234,64 +234,80 @@ export const getNextName = (list, name) => {
 }
 
 export const STATUS_MAP = {
-    '新建的': {
-        icon: 'android-more-horizontal',
-        class: 'status-primary'
-    },
-    '未开始': {
-        icon: 'android-more-horizontal',
-        class: 'status-primary'
-    },
-    '进行中': {
-        icon: 'load-a',
-        class: 'status-warning'
-    },
-    '暂停中': {
-        icon: 'pause',
-        class: 'status-error'
-    },
-    '已结项': {
-        icon: 'checkmark-circled',
-        class: 'status-success'
-    },
-    '已完成': {
-        icon: 'checkmark-circled',
-        class: 'status-success'
-    },
-    '已完结': {
-        icon: 'checkmark-circled',
-        class: 'status-success'
-    },
-    '通过': {
-        icon: 'checkmark',
-        class: 'status-success'
-    },
-    '驳回': {
-        icon: 'close',
-        class: 'status-error'
-    },
-    '待解决': {
-        icon: 'load-a',
-        class: 'status-primary'
-    },
-    '已解决': {
-        icon: 'checkmark-circled',
-        class: 'status-success'
-    },
-    '未解决': {
-        icon: 'close-circled',
-        class: 'status-error'
-    },
-    '一般': {
-        icon: 'android-warning',
-        class: 'status-info'
-    },
-    '紧急': {
-        icon: 'android-warning',
-        class: 'status-warning'
-    },
-    '十分紧急': {
-        icon: 'android-warning',
-        class: 'status-error'
-    }
+  '待审批': {
+    icon: 'clock',
+    class: 'status-warning'
+  },
+  '新建的': {
+    icon: 'android-more-horizontal',
+    class: 'status-primary'
+  },
+  '未开始': {
+    icon: 'android-more-horizontal',
+    class: 'status-primary'
+  },
+  '进行中': {
+    icon: 'load-a',
+    class: 'status-warning'
+  },
+  '暂停中': {
+    icon: 'pause',
+    class: 'status-error'
+  },
+  '已结项': {
+    icon: 'checkmark-circled',
+    class: 'status-success'
+  },
+  '已完成': {
+    icon: 'checkmark-circled',
+    class: 'status-success'
+  },
+  '已完结': {
+    icon: 'checkmark-circled',
+    class: 'status-success'
+  },
+  '通过': {
+    icon: 'checkmark',
+    class: 'status-success'
+  },
+  '驳回': {
+    icon: 'close',
+    class: 'status-error'
+  },
+  '已驳回': {
+    icon: 'close',
+    class: 'status-error'
+  },
+  '审批通过': {
+    icon: 'checkmark',
+    class: 'status-success'
+  },
+  '审批驳回': {
+    icon: 'close',
+    class: 'status-error'
+  },
+  '待解决': {
+    icon: 'load-a',
+    class: 'status-primary'
+  },
+  '已解决': {
+    icon: 'checkmark-circled',
+    class: 'status-success'
+  },
+  '未解决': {
+    icon: 'close-circled',
+    class: 'status-error'
+  },
+  '一般': {
+    icon: 'android-warning',
+    class: 'status-info'
+  },
+  '紧急': {
+    icon: 'android-warning',
+    class: 'status-warning'
+  },
+  '十分紧急': {
+    icon: 'android-warning',
+    class: 'status-error'
+  }
 }

@@ -10,7 +10,7 @@
     </Row>
     <Row :gutter="16">
         <div v-if="showProjectList">
-            <Col span="12" :style="{marginBottom: '10px'}">
+            <Col :lg="24" :md="24" :xs="24" :style="{marginBottom: '10px'}">
                 <Card>
                     <p slot="title" class="card-title">
                         <Icon type="android-time"></Icon>
@@ -24,7 +24,7 @@
                     </div>
                 </Card>
             </Col>
-            <Col span="12" :style="{marginBottom: '10px'}">
+            <Col :lg="24" :md="24" :xs="24" :style="{marginBottom: '10px'}">
                 <Card>
                     <p slot="title" class="card-title">
                         <Icon type="android-apps"></Icon>
@@ -48,101 +48,123 @@
 
 <script>
 import {
-    getProject} from '@/api/project'
+  getProject} from '@/api/project'
 import newProject from './new-project.vue'
+import { STATUS_MAP } from '@/libs/util'
+
 export default {
-    components: {
-        newProject
-    },
-    data () {
-        return {
-            showProjectList: true,
-            showNewProject: false,
-            project: {
-                data: [],
-                columns: [
-                    {
-                        title: '序号',
-                        type: 'index',
-                        width: 80,
-                        align: 'center'
-                    },
-                    {
-                        title: '项目',
-                        key: 'name',
-                        render: (h, params) => {
-                            return h('a', {
-                                on: {
-                                    click: () => {
-                                        let argu = { projectId: params.row.id };
-                                        this.$router.push({
-                                            name: 'project-detail',
-                                            params: argu
-                                        });
-                                    }
-                                }
-                            }, params.row.name)
-                        }
-                    },
-                    {
-                        title: '立项时间',
-                        key: 'create_time'
-                    },
-                    {
-                        title: '项目状态',
-                        key: 'project_status_name'
-                    },
-                    {
-                        title: '投标状态',
-                        key: 'tender_status_name'
-                    },
-                    {
-                        title: '合同状态',
-                        key: 'contract_status_name'
-                    },
-                    {
-                        title: '负责人',
-                        key: 'manager_name'
-                    }
-                ],
-                total: 0,
-                current: 1,
-                loading: true,
-                params: {
-                    limit: 10,
-                    offset: 0
+  name: 'project-list',
+  components: {
+    newProject
+  },
+  data () {
+    return {
+      showProjectList: true,
+      showNewProject: false,
+      project: {
+        data: [],
+        columns: [
+          {
+            title: '项目编号',
+            type: 'index',
+            width: 120,
+            align: 'center'
+          },
+          {
+            title: '项目名称',
+            key: 'name',
+            render: (h, params) => {
+              return h('a', {
+                on: {
+                  click: () => {
+                    let argu = { projectId: params.row.id }
+                    this.$router.push({
+                      name: 'project-detail',
+                      params: argu
+                    })
+                  }
                 }
+              }, params.row.name)
             }
-        };
-    },
-    mounted () {
-        this.getProjects()
-    },
-    methods: {
-        getProjects () {
-            getProject(this.project.params).then((res) => {
-                this.project.data = res.results
-                this.project.total = res.count
-                this.project.loading = false
-            })
-        },
-        changePage (page) {
-            this.project.current = page
-            this.params.offset = page + 1
-            this.project.loading = true
-        },
-        addNewProject: function () {
-            this.showNewProject = true
-            this.showProjectList = false
-        },
-        back: function () {
-            this.showProjectList = true
-            this.showNewProject = false
+          },
+          {
+            title: '立项时间',
+            key: 'create_time'
+          },
+          {
+            title: '项目状态',
+            // key: 'project_status_name',
+            render: (h, params) => {
+              const status = params.row.project_status_name
+              return h('span', {
+                class: STATUS_MAP[status].class
+              }, params.row.project_status_name)
+            }
+          },
+          {
+            title: '投标状态',
+            // key: 'tender_status_name',
+            render: (h, params) => {
+              const status = params.row.tender_status_name
+              return h('span', {
+                class: STATUS_MAP[status].class
+              }, params.row.tender_status_name)
+            }
+          },
+          {
+            title: '合同状态',
+            // key: 'contract_status_name',
+            render: (h, params) => {
+              const status = params.row.contract_status_name
+              return h('span', {
+                class: STATUS_MAP[status].class
+              }, params.row.contract_status_name)
+            }
+          },
+          {
+            title: '负责人',
+            key: 'manager_name'
+          }
+        ],
+        total: 0,
+        current: 1,
+        loading: true,
+        params: {
+          limit: 10,
+          offset: 0
         }
+      }
     }
+  },
+  mounted () {
+    this.getProjects()
+  },
+  methods: {
+    getProjects () {
+      getProject(this.project.params).then((res) => {
+        this.project.data = res.results
+        this.project.total = res.count
+        this.project.loading = false
+      })
+    },
+    changePage (page) {
+      this.project.current = page
+      this.params.offset = page + 1
+      this.project.loading = true
+    },
+    addNewProject: function () {
+      this.showNewProject = true
+      this.showProjectList = false
+    },
+    back: function () {
+      this.showProjectList = true
+      this.showNewProject = false
+    }
+  }
 }
+
 </script>
 
-<style>
-
+<style lang="less">
+    @import '../../components/common/common.less';
 </style>

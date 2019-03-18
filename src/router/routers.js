@@ -44,6 +44,16 @@ export default [
     component: Main,
     children: [
       {
+        path: 'pending',
+        name: 'pending',
+        meta: {
+          icon: 'cube',
+          title: '待审批',
+          access: ['super_admin', 1]
+        },
+        component: () => import('@/view/workflow/pending.vue')
+      },
+      {
         path: 'project',
         name: 'project',
         meta: {
@@ -59,7 +69,7 @@ export default [
           icon: 'ios-book',
           title: '任务'
         },
-        component: () => import('@/view/components/count-to/count-to.vue')
+        component: () => import('@/view/workflow/work.vue')
       },
       {
         path: 'project-detail',
@@ -70,6 +80,15 @@ export default [
           hideInMenu: true
         },
         component: () => import('@/view/workflow/project-detail.vue')
+      },
+      {
+        path: 'file-manage',
+        name: 'file-manage',
+        meta: {
+          icon: 'document',
+          title: '文件'
+        },
+        component: () => import('@/view/workflow/file-manage.vue')
       }
     ]
   },

@@ -2,17 +2,26 @@
     <Card>
         <Form :model="formItem" :label-width="80">
             <FormItem label="项目编号">
-                <Input v-model="formItem.id" placeholder="输入项目编号"></Input>
+                <Input v-model="formItem.id" placeholder="输入项目编号" disabled></Input>
             </FormItem>
             <FormItem label="项目名称">
                 <Input v-model="formItem.name" placeholder="输入项目名称"></Input>
             </FormItem>
+            <FormItem label="项目状态">
+                <Input v-model="formItem.project_status_name" disabled></Input>
+            </FormItem>
+            <FormItem label="投标状态">
+                <Input v-model="formItem.tender_status_name" disabled></Input>
+            </FormItem>
+            <FormItem label="合同状态">
+                <Input v-model="formItem.contract_status_name" disabled></Input>
+            </FormItem>
             <FormItem label="项目描述">
-                <Input v-model="formItem.description" type="textarea" :autosize="{minRows: 20,maxRows: 40}" placeholder="输入项目描述"></Input>
+                <Input v-model="formItem.description" type="textarea" :autosize="{minRows: 15,maxRows: 40}" placeholder="输入项目描述"></Input>
             </FormItem>
             <FormItem label="负责人">
-                <Select v-model="formItem.manager" filterable>
-                    <Option v-for="user in users" :value="user.id" :key="user.id">{{ user.realname }} （{{ user.groups.join(' ') }}）</Option>
+                <Select v-model="formItem.manager" :placeholder="formItem.manager_name" filterable>
+                    <Option v-for="(user, key) in users" :value="user.value" :key="key">{{ user.label }}</Option>
                 </Select>
             </FormItem>
             <FormItem label="委托单位">
@@ -35,22 +44,33 @@
             </FormItem>
             <FormItem>
                 <Button type="primary" @click="save">保存</Button>
+                <Button type="info" @click="saveAndRepost">保存并重新提交审批</Button>
             </FormItem>
         </Form>
     </Card>
 </template>
 <script>
 import { getUsers } from '@/api/user'
-import { addProject } from '@/api/project'
+import { updateProject, getProjectDetail } from '@/api/project'
 export default {
-  name: 'newProject',
+  name: 'editProject',
+  props: {
+    projectId: String
+  },
   data () {
     return {
       formItem: {
         id: '',
         name: '',
+        project_status: 0,
+        project_status_name: '',
+        tender_status: 0,
+        tender_status_name: '',
+        contract_status: 0,
+        contract_status_name: '',
         description: '',
         manager: '',
+        manager_name: '',
         client: '',
         town: '',
         place: '',
@@ -65,28 +85,44 @@ export default {
     }
   },
   mounted: function () {
-    this.getUserList()
+    // this.getUserList()
+    this.initProject()
   },
   methods: {
+    initProject: function () {
+      getProjectDetail({
+        id: this.projectId
+      }).then((res) => {
+        if (res) {
+          this.formItem = res
+          this.getUserList()
+        }
+      })
+    },
     save: function () {
       if (this.checkForm()) {
-        addProject(this.formItem).then((res) => {
+        updateProject(this.formItem).then((res) => {
+          this.formItem = res
           this.$Notice.success({
             title: '通知',
-            desc: '添加成功！'
-          })
-          this.$router.replace({
-            name: 'project-detail',
-            params: {
-              projectId: res.id
-            }
+            desc: '保存成功！'
           })
         })
       }
     },
+    saveAndRepost: function () {
+      // 保存和重新提交审批
+      this.formItem.project_status = 0
+      this.save()
+    },
     getUserList: function () {
       getUsers().then((res) => {
-        this.users = res.users
+        this.users = res.users.map((r) => {
+          return {
+            value: r.id,
+            label: r.realname + '(' + r.groups.join(' ') + ')'
+          }
+        })
       })
     },
     checkForm: function () {

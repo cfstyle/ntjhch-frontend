@@ -24,6 +24,7 @@ class httpRequest {
     instance.interceptors.request.use(config => {
       if (!config.url.includes('/user')) {
         config.headers['x-access-token'] = Cookies.get(TOKEN_KEY)
+        config.headers['Authorization'] = Cookies.get(TOKEN_KEY)
       }
       // Spin.show()
       // 在发送请求之前做些什么
@@ -45,7 +46,10 @@ class httpRequest {
       if (!(data instanceof Blob)) {
         if (data.code !== undefined && data.code !== 200) {
           // 后端服务在个别情况下回报201，待确认
-          if (data.code === 401) {
+          if (data.code === 201) {
+            // 201 更新成功
+
+          } else if (data.code === 401) {
             Cookies.remove(TOKEN_KEY)
             window.location.href = '/#/login'
             Message.error('未登录，或登录失效，请登录')
